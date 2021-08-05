@@ -2,11 +2,6 @@
 Example Code on how to use CloudKarfka (Kafka as a cloud service) service from Csharp or Dotnet
 
 
-# Contents
-
-[Useful URLS: 1](#_Toc79069980)
-
-[CloudKarafka Settings to use in the current Code 1](#_Toc79069981)
 
 ## Useful URLS:
 
@@ -28,6 +23,6 @@ Example Code on how to use CloudKarfka (Kafka as a cloud service) service from C
 
 ## CloudKarafka Settings to use in the current Code
 
-![](RackMultipart20210805-4-lixfns_html_daf233b316d6b215.png)
+![](https://github.com/ironpython2001/CloudKarafka-Dotnet-Examples/blob/main/docs/1.png)
 
-![](RackMultipart20210805-4-lixfns_html_bb16270f1daf200e.png)
+![](https://github.com/ironpython2001/CloudKarafka-Dotnet-Examples/blob/main/docs/2.png)
