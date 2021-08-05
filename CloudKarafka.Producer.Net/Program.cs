@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using CloudKarafka.Pocos.Net;
+using System.Text.Json;
 
 namespace CloudKarafka.Producer.Net
 {
@@ -38,10 +40,12 @@ namespace CloudKarafka.Producer.Net
             using var p = new ProducerBuilder<Null, string>(config).Build();
             try
             {
+                var weatherRequest = new WeatherRequest() { Location = "hyderabad" };
+                var weatherRequestJson = JsonSerializer.Serialize(weatherRequest);
                 var dr = await p.ProduceAsync($"{topic}", new Message<Null, string>
                 {
-                    //for demo purpose just posting topic value as datetime.now
-                    Value = $"topic posted on {DateTime.Now}"
+                    //Value = $"topic posted on {DateTime.Now}"
+                    Value= weatherRequestJson
                 });
                 Console.WriteLine($"Delivered '{dr.Value}' to '{dr.TopicPartitionOffset}'");
             }

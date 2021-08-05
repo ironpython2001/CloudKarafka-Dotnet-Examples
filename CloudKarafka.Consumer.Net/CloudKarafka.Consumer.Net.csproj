@@ -12,6 +12,9 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0-preview.6.21352.12" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CloudKarafka.Pocos.Net\CloudKarafka.Pocos.Net.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

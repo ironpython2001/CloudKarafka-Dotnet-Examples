@@ -5,6 +5,8 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using CloudKarafka.Pocos.Net;
+using System.Text.Json;
 
 
 namespace CloudKarafka.Consumer.Net
@@ -55,7 +57,11 @@ namespace CloudKarafka.Consumer.Net
                     try
                     {
                         var cr = await Task.FromResult(c.Consume(cts.Token));
+                        var weatherRequestJson = cr.Message.Value;
+                        var weatherRequest = JsonSerializer.Deserialize<WeatherRequest>(weatherRequestJson);
                         Console.WriteLine($"Consumed message '{cr.Message.Value}' at: '{cr.TopicPartitionOffset}'.");
+                        Console.WriteLine(weatherRequest.Location);
+                        
                     }
                     catch (ConsumeException e)
                     {
